@@ -11,11 +11,10 @@ function getAndPrintHTML() {
     var result = ''
     response.setEncoding('utf8');
     response.on('data', function(data) {
-      result += ('\n' + data.toString());
-      console.log(result);
+      result += data;
     });
     response.on('end', function() {
-      console.log('Response stream complete');
+      console.log(result);
     });
   });
 }
